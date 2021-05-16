@@ -1,0 +1,72 @@
+(group "Bytestrings"
+
+  (feat "Is bytestring zero-length?"
+        (cmd "test" "-z"))
+
+  (feat "Is bytestring non-zero-length?"
+        (cmd "test" "-n"))
+
+  (feat "How many bytes in bytestring?"
+        (cmd "wc" "-c")
+        (cfun "strlen"))
+
+  (feat "How many lines in bytestring?"
+        (cmd "wc" "-l"))
+
+  (feat "Are two bytestrings equal?"
+        (cmd "test" "="))
+
+  (feat "Are two bytestrings inequal?"
+        (cmd "test" "!=")
+        (cfun "strcmp"))
+
+  (feat "Does bytestring contain byte?"
+        (cfun "strchr")
+        (cfun "memchr"))
+
+  (feat "Does bytestring contain bytestring?"
+        (cmd "grep" "-F")
+        (cfun "strstr")))
+
+
+(group "Regular expressions"
+
+  (feat "Get all lines of text matching a regexp"
+        (cmd "grep"))
+
+  (feat "Get all lines of text not matching a regexp"
+        (cmd "grep" "-v")))
+
+
+(group "Numbers"
+
+  (feat "Are two integers equal?"
+        (cmd "test" "-eq"))
+
+  (feat "Are two integers inequal?"
+        (cmd "test" "-ne"))
+
+  (feat "Is one integer less than another?"
+        (cmd "test" "-lt"))
+
+  (feat "Is one integer greater than another?"
+        (cmd "test" "-gt")))
+
+
+(group "Directory listings"
+
+  (feat "Open directory listing"
+        (cfun "opendir"))
+
+  (feat "Read name of directory entry from listing"
+        (cfun "readdir")
+        (cfun "readdir_r"))
+
+  (feat "Close directory listing"
+        (cfun "closedir"))
+
+  (feat "List all names in directory"
+        (cmd "ls" "-a"))
+
+  (feat "List all non-dotfile names in directory"
+        (cmd "ls")))
