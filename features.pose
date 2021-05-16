@@ -70,3 +70,63 @@
 
   (feat "List all non-dotfile names in directory"
         (cmd "ls")))
+
+
+(group "File system pathnames"
+
+  (feat "Make a directory"
+        (cmd "mkdir")
+        (cfun "mkdir"))
+
+  (feat "Ensure directory and its parents exist"
+        (cmd "mkdir" "-p"))
+
+  (feat "Make a hard link"
+        (cmd "ln")
+        (cfun "link"))
+
+  (feat "Make a symbolic link"
+        (cmd "ln" "-s")
+        (cfun "symlink"))
+
+  (feat "Make a fifo (named pipe)"
+        (cmd "mkfifo"))
+
+  (feat "Delete a non-directory file (do not follow symlinks)"
+        (cfun "unlink")
+        (cmd "rm"))
+
+  (feat "Delete an empty directory (do not follow symlinks)"
+        (cfun "rmdir"))
+
+  (feat "Delete an empty directory or non-directory (do not follow symlinks)"
+        (cfun "remove"))
+
+  (feat "Delete directory tree"
+        (cmd "rm" "-r"))
+
+  (feat "Delete directory tree (ignore errors)"
+        (cmd "rm" "-rf"))
+
+  (feat "Rename a file, overwriting target"
+        (cmd "mv" "-f")
+        (cfun "rename"))
+
+  (feat "Does file system path exist? (do not follow symlinks)"
+        (cfun "lstat"))
+
+  (feat "Does file system path exist? (follow symlinks)"
+        (cmd "test" "-e"))
+
+  (feat "Is file system path a symbolic link?"
+        (cmd "test" "-h")
+        (cmd "test" "-L")
+        (cfun "lstat"))
+
+  (feat "Does file system path point to a file? (follow symlinks)"
+        (cmd "test" "-f")
+        (cfun "stat"))
+
+  (feat "Does file system path point to a directory? (follow symlinks)"
+        (cmd "test" "-d")
+        (cfun "stat")))
